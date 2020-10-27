@@ -31,14 +31,15 @@
       </div>
 
     </div>
-  
+  <form class="save-bstorm">
     <div class="row">
       <div class="form-group col-md-6">
         <label for="bbox"><h2> Brainstorming Box </h2> </label>
-        <textarea class="form-control" id="bbox" rows="8"></textarea>
+        <textarea name="bboxText" form="save-bstorm" class="form-control" id="bbox" rows="8">{{bboxText}}</textarea>
       </div>
     </div>
-    <button class="btn btn-primary"> Save </button>
+    <input class="btn btn-primary" type="submit" name="submit" value="Save">
+  </form>
   </div>
   
 </template>

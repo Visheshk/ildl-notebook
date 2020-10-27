@@ -10,6 +10,10 @@ Template.q1.helpers({
   links() {
     return Links.find({});
   },
+
+  bboxText() {
+    return "corresponding mongfoy query to retrieve student's text";
+  }
 });
 
 Template.q1.events({
@@ -29,4 +33,12 @@ Template.q1.events({
       }
     });
   },
+
+  'submit .save-bstorm' (event) {
+    event.preventDefault();
+    console.log(event.target);
+    // Meteor.call('record.bbox', event.target.bb oxData, (error) => {
+      //callback stuff in here
+    // })''
+  }
 });
