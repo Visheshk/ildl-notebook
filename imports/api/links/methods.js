@@ -15,4 +15,29 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
+
+  'record.bbox'(text) {
+    ///<test>
+
+    return Answers.insert({
+      "studentID": Meteor.userId(),
+      "challengeID": "rollerCoaster",
+      "activityID": "brainstorm",
+      "info": {
+        "box": text
+      }
+    });
+
+    //V2
+    // return Answers.update({
+    //   $and: [
+    //     {"studentID": Meteor.userID()},
+    //     {"challengeID": "rollerCoaster"},
+    //     {"activityID": "brainstorm"}
+    //   ]
+    // },
+    // {$set: {"info": text}},
+    // {upsert: true}
+    // );
+  }
 });

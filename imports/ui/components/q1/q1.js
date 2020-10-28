@@ -12,7 +12,7 @@ Template.q1.helpers({
   },
 
   bboxText() {
-    return "corresponding mongfoy query to retrieve student's text";
+    return "corresponding mongo query to retrieve student's text";
   }
 });
 
