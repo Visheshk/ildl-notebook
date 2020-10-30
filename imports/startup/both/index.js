@@ -1,11 +1,24 @@
 // Import modules used by both client and server through a single index entry point
 // e.g. useraccounts configuration file.
+import { FlowRouter } from 'meteor/kadira:flow-router';
+
 AccountsTemplates.configure({
   confirmPassword: false,
   overrideLoginErrors: false,
   lowercaseUsername: true,
   showForgotPasswordLink: true,
-  homeRoutePath: '/'
+  homeRoutePath: '/',
+  onSubmitHook: ( error, state ) => {
+      if ( !error && state === 'signIn' ) {
+          // login successful, route to index
+          console.log("sign in?");
+          FlowRouter.go('/rollerCoaster/?challenge=1&activity=q1');
+      }
+      console.log(state);
+  },
+  onLogoutHook: ( error, state ) => {
+      FlowRouter.go('/');
+  }
 });
 
 // AccountsTemplates.removeField('email');

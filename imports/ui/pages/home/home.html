@@ -1,8 +1,32 @@
 <template name="App_home">
-  {{> hello}}
   <!-- {{> info}} -->
   
   {{#if currentUser}}
-  	{{> q1}}
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-around">
+      <div class="btn-group-lg" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">Challenge 1</button>
+        <button type="button" class="btn btn-secondary">Challenge 2</button>
+        <button type="button" class="btn btn-secondary">Challenge 3</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2  d-flex justify-content-around">
+        <div class="btn-group-vertical" role="group" aria-label="Basic example">
+          {{#each activities}}
+            <button type="button" class="btn btn-light actChoice {{activeState}}">{{activityText}}</button>
+          {{/each}}
+        </div> 
+      </div>
+      <div class="col-md-10">
+
+        {{> Template.dynamic template=this}}
+      
+      </div>
+    </div>
+  </div>
+  {{else}}
+    {{> hello}}
   {{/if}}
+
 </template>

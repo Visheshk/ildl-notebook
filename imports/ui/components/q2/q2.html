@@ -1,0 +1,60 @@
+<template name="q2">
+  <div class="container-fluid">
+    <p> </p>
+    <h2>Car Lift Exploration</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <!-- <strong class="d-inline-block mb-2 text-primary">World</strong>
+            <h3 class="mb-0">Featured post</h3>
+            <div class="mb-1 text-muted">Nov 12</div> -->
+            <p class="card-text mb-auto"> <strong> Ready, Set, Explore! </strong> </p>
+            <p>
+              You've just learned the meanings of some concepts that are important for your car lift exploration. Now, think about how mass, height, and friction will affect applied force, work, energy and efficiency. Read the statements below, and write one of the following on the line provided before the state:
+              "A" if you agree; "D" if you disagree, "DK" if you Don't Know.
+            </p>
+            <!-- <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p> -->
+            
+          </div>      
+          
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h5> Think like Scientists and Engineers! </h5>
+        <p> Scientists and engineers think about what they know before starting a new exploration. </p>
+        <p> What do you know about work, force, energy, friction, and efficiency? </p>
+      </div>
+
+    </div>
+
+    <form class="save-car-exploration">
+      <div class="row">
+        <div class="form-group col-md-9">
+          {{#each queries}}
+            <p>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-success active">
+                  <input type="radio" name="options" id="option1" checked> Agree
+                </label>
+                <label class="btn btn-danger">
+                  <input type="radio" name="options" id="option2"> Disagree
+                </label>
+                <label class="btn btn-warning">
+                  <input type="radio" name="options" id="option3"> Don't Know
+                </label>
+              </div>
+
+            {{this}}
+            </p>
+          {{/each}}
+
+          
+        </div>
+      </div>
+      <input class="btn btn-primary" type="submit" name="submit" value="Save">
+    </form>
+  </div>
+  
+</template>
