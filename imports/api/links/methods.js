@@ -3,6 +3,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Links } from './links.js';
+import { Entries } from './links.js';
 
 Meteor.methods({
   'links.insert'(title, url) {
@@ -18,15 +19,15 @@ Meteor.methods({
 
   'record.bbox'(text) {
     ///<test>
-
-    return Answers.insert({
-      "studentID": Meteor.userId(),
-      "challengeID": "rollerCoaster",
-      "activityID": "brainstorm",
-      "info": {
-        "box": text
-      }
-    });
+    return Entries.update({$and: [
+      {"studentID": Meteor.userId()},
+      {"challengeID": "rollerCoaster"},
+      {"activityID": "brainstorm"},
+    ]},
+    {$set: 
+      { "info": { "box": text } }
+    },
+    {upsert: true});
 
     //V2
     // return Answers.update({
