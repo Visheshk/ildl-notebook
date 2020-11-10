@@ -27,6 +27,9 @@ Meteor.methods({
     {$set: 
       { "info": { "box": text } }
     },
+    {$set:
+      { "ADK": {"Q1": text, "Q2": text, "Q3": text, "Q4": text}}
+    },
     {upsert: true});
 
     //V2
@@ -41,4 +44,6 @@ Meteor.methods({
     // {upsert: true}
     // );
   }
+
+
 });

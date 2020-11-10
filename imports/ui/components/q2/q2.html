@@ -34,19 +34,28 @@
         <div class="form-group col-md-9">
           {{#each queries}}
             <p>
+                {{this}} <br>
+              <!--
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-success active">
-                  <input type="radio" name="options" id="option1" checked> Agree
+                  <input type="checkbox" name="option1" id="option1" value = "Agree"> Agree
                 </label>
                 <label class="btn btn-danger">
-                  <input type="radio" name="options" id="option2"> Disagree
+                  <input type="checkbox" name="option1" id="option2" value = "Disagree"> Disagree
                 </label>
                 <label class="btn btn-warning">
-                  <input type="radio" name="options" id="option3"> Don't Know
+                  <input type="checkbox" name="option1" id="option3" value = "DK"> Don't Know
                 </label>
               </div>
+              -->
 
-            {{this}}
+                <input type="radio" id="option1" name={{this}} value="Agree" checked="">
+                <label for={{this}}>Agree</label><br>
+                <input type="radio" id="option2" name={{this}} value="Disagree" checked="">
+                <label for={{this}}>Disagree</label><br>
+                <input type="radio" id="option3" name={{this}} value="DK" checked="">
+                <label for={{this}}>Don't know</label>
+
             </p>
           {{/each}}
 

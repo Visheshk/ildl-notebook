@@ -27,7 +27,7 @@ Template.q1.helpers({
 Template.q1.events({
   'submit .info-link-add'(event) {
     event.preventDefault();
-
+l
     const target = event.target;
     const title = target.title;
     const url = target.url;
@@ -52,4 +52,6 @@ Template.q1.events({
       // else { }
     });
   }
+
+
 });
