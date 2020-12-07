@@ -31,18 +31,6 @@ Meteor.methods({
       { "ADK": {"Q1": text, "Q2": text, "Q3": text, "Q4": text}}
     },
     {upsert: true});
-
-    //V2
-    // return Answers.update({
-    //   $and: [
-    //     {"studentID": Meteor.userID()},
-    //     {"challengeID": "rollerCoaster"},
-    //     {"activityID": "brainstorm"}
-    //   ]
-    // },
-    // {$set: {"info": text}},
-    // {upsert: true}
-    // );
   }
 
 
